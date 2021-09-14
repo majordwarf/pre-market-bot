@@ -1,10 +1,10 @@
-name: Publish TrailerFlix on gh-pages
+name: Test
 
 on:
-  - schedule:
+  schedule:
     - cron: 41 3 * * 1-5
-  - push:
-    - branches:
+  push:
+    branches:
       - master
 
 jobs:
