@@ -1,0 +1,35 @@
+name: Publish TrailerFlix on gh-pages
+
+on:
+  - schedule:
+    - cron: 41 3 * * 1-5
+  - push:
+    - branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js 14
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.6
+      
+      - name: install dependencies
+        run: yarn
+
+      - name: install chrome
+        run: |
+          sudo apt install fonts-liberation libxshmfence1 xdg-utils
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo dpkg -i google-chrome-stable_current_amd64.deb
+
+      - name: run script
+        run: |
+          yarn node p1.js
+          yarn node p2.js
+          yarn node p3.js

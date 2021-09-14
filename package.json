@@ -1,0 +1,15 @@
+{
+    "name": "pre-market-bot",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "https://github.com/majordwarf/pre-market-bot",
+    "author": "Tejas Tank <tejastank10@gmail.com>",
+    "license": "MIT",
+    "dependencies": {
+        "discord.js": "^13.1.0",
+        "puppeteer": "^10.2.0",
+        "puppeteer-extra": "^3.1.18",
+        "puppeteer-extra-plugin-stealth": "^2.7.8",
+        "sharp": "^0.29.1"
+    }
+}
